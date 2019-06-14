@@ -8,13 +8,15 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-
+var entries =  utils.getMultiEntry('./src/'+config.moduleName+'/**/*.js'); // 获得入口js文件
+console.log(entries);
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  entry: {
-    app: './src/main.js'
-  },
+  // entry: {
+  //   app: './src/main.js'
+  // },
+  entry: entries,
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',

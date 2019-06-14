@@ -11,6 +11,11 @@ module.exports = {
     sourceMap: sourceMapEnabled,
     extract: isProduction
   }),
+  postcss: [
+    require('autoprefixer')({browsers: ['iOS >= 7', 'Android >= 4.1']}),
+    require('postcss-px2rem')({remUnit: 75, 'baseDpr':2})
+
+  ],
   cssSourceMap: sourceMapEnabled,
   cacheBusting: config.dev.cacheBusting,
   transformToRequire: {
