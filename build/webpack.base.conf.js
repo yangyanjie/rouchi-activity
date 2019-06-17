@@ -9,14 +9,24 @@ function resolve (dir) {
 }
 
 var entries =  utils.getMultiEntry('./src/'+config.moduleName+'/**/*.js'); // 获得入口js文件
-console.log(entries);
+// console.log(entries);
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  // entry: {
-  //   app: './src/main.js'
-  // },
-  entry: entries,
+  // entry: entries,
+  entry: () => {
+    let argv = process.argv[2]
+    console.log(argv)
+    let entry = entries[process.argv[2]]
+    if (argv === 'all' || !argv) {
+      return entries
+    } else {
+      var obj = {}
+      obj[argv] = entry
+      return obj
+    }
+    // if (process.agrv)
+  },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',

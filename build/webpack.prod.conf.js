@@ -143,14 +143,15 @@ if (config.build.bundleAnalyzerReport) {
 //构建生成多页面的HtmlWebpackPlugin配置，主要是循环生成
 var pages =  utils.getMultiEntry('./src/'+config.moduleName+'/**/*.html');
 for (var pathname in pages) {
-
-  var conf = {
-    filename: pathname + '/' + pathname + '.html',
-    template: pages[pathname], // 模板路径
-    inject: true,              // js插入位置
-	  hash:true
-  };
-
+  console.log(pathname, process.argv[2])
+  if(pathname === process.argv[2] || process.argv[2] === 'all' || !process.argv[2]) {
+    var conf = {
+      filename: pathname + '/' + pathname + '.html',
+      template: pages[pathname], // 模板路径
+      inject: true,              // js插入位置
+      hash:true
+    };
+  }
   webpackConfig.plugins.push(new HtmlWebpackPlugin(conf));
 }
 

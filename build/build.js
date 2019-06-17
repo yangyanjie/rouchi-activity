@@ -13,8 +13,10 @@ const webpackConfig = require('./webpack.prod.conf')
 
 const spinner = ora('building for production...')
 spinner.start()
-
-rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
+let assetsRoot = (process.argv[2] === 'all' || !process.argv[2]) ? config.build.assetsRoot : config.build.assetsRoot + '/' + process.argv[2]
+console.log(process.argv[2], 11111111)
+// config.build.assetsRoot
+rm(path.join(assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
   webpack(webpackConfig, (err, stats) => {
     spinner.stop()
