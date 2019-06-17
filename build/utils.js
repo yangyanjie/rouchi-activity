@@ -8,7 +8,6 @@ exports.assetsPath = function (_path) {
   const assetsSubDirectory = process.env.NODE_ENV === 'production'
     ? config.build.assetsSubDirectory
     : config.dev.assetsSubDirectory
-
   return path.posix.join(assetsSubDirectory, _path)
 }
 
@@ -101,12 +100,12 @@ exports.createNotifierCallback = () => {
 }
 var glob = require('glob');
 exports.getMultiEntry = function (globPath) {
-  console.log(globPath+'------------');
+  // console.log(globPath+'------------');
   var entries = {},
     basename, tmp, pathname;
 
   glob.sync(globPath).forEach(function (entry) {
-    console.log(entry);
+    // console.log(entry);
     basename = path.basename(entry, path.extname(entry));
     tmp = entry.split('/').splice(-4);
 
