@@ -100,12 +100,10 @@ exports.createNotifierCallback = () => {
 }
 var glob = require('glob');
 exports.getMultiEntry = function (globPath) {
-  // console.log(globPath+'------------');
   var entries = {},
     basename, tmp, pathname;
 
   glob.sync(globPath).forEach(function (entry) {
-    // console.log(entry);
     basename = path.basename(entry, path.extname(entry));
     tmp = entry.split('/').splice(-4);
 
@@ -113,7 +111,6 @@ exports.getMultiEntry = function (globPath) {
 	if( tmp[0] == 'src' ){
 		pathsrc = tmp[1];
 	}
-	// console.log(pathsrc)
     pathname = pathsrc + '/' + basename; // 正确输出js和html的路径
     entries[basename] = entry;
 

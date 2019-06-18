@@ -25,6 +25,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   output: {
       path: config.build.assetsRoot,
       filename: utils.assetsPath('[name]/js/[name].[chunkhash].js'),
+      chunkFilename: utils.assetsPath('[name]/js/[name].[id].js'),
       publicPath: '../'
   },
   plugins: [
@@ -57,12 +58,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         ? { safe: true, map: { inline: false } }
         : { safe: true }
     }),
-    // generate dist index.html with correct asset hash for caching.
-    // you can customize output by editing /index.html
+    // generate dist  with correct asset hash for caching.
+    // you can customize output by editing /
     // see https://github.com/ampedandwired/html-webpack-plugin
     // new HtmlWebpackPlugin({
     //   filename: config.build.index,
-    //   template: 'index.html',
+    //   template: '',
     //   inject: true,
     //   minify: {
     //     removeComments: true,
@@ -143,16 +144,20 @@ if (config.build.bundleAnalyzerReport) {
 //构建生成多页面的HtmlWebpackPlugin配置，主要是循环生成
 var pages =  utils.getMultiEntry('./src/'+config.moduleName+'/**/*.html');
 for (var pathname in pages) {
-  console.log(pathname, process.argv[2])
+  // console.log(pathname, process.argv[2])
   if(pathname === process.argv[2] || process.argv[2] === 'all' || !process.argv[2]) {
     var conf = {
       filename: pathname + '/' + pathname + '.html',
       template: pages[pathname], // 模板路径
+      chunks: ['vendor',pathname], // 每个html引用的js模块
       inject: true,              // js插入位置
-      hash:true
+      hash:true,
     };
+    console.log(conf, 'conf')
+    webpackConfig.plugins.push(new HtmlWebpackPlugin(conf));
   }
-  webpackConfig.plugins.push(new HtmlWebpackPlugin(conf));
+  
+  
 }
 
 module.exports = webpackConfig

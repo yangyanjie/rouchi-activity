@@ -25,7 +25,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
-        { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
+        { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, '') },
       ],
     },
     hot: true,
@@ -53,8 +53,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     // new HtmlWebpackPlugin({
-    //   filename: 'index.html',
-    //   template: 'index.html',
+    //   filename: '',
+    //   template: '',
     //   inject: true
     // }),
     // copy custom static assets
@@ -74,7 +74,7 @@ for (var pathname in pages) {
     filename: pathname + '.html',
     template: pages[pathname], // 模板路径
     chunks: [pathname, 'vendors', 'manifest'], // 每个html引用的js模块
-    // inject: true              // js插入位置
+    inject: true              // js插入位置
   };
   // 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
   devWebpackConfig.plugins.push(new HtmlWebpackPlugin(conf));
@@ -94,7 +94,7 @@ module.exports = new Promise((resolve, reject) => {
       // Add FriendlyErrorsPlugin
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}/home.html`],
+          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
         },
         onErrors: config.dev.notifyOnErrors
         ? utils.createNotifierCallback()
