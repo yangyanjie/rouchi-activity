@@ -1,10 +1,17 @@
 <template>
     <div id="home">
         <div class="header">hello, home!</div>
+        <!-- <Hello /> -->
     </div>
 </template>
 
 <script>
+// import Hello from '@/component/HelloWorld'
+// export default {
+//     // components: {
+//     //     Hello
+//     // }
+// }
     
 </script>
 

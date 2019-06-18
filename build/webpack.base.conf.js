@@ -16,9 +16,9 @@ module.exports = {
   // entry: entries,
   entry: () => {
     let argv = process.argv[2]
-    console.log(argv)
+    console.log(process.argv.length, 111111111111)
     let entry = entries[process.argv[2]]
-    if (argv === 'all' || !argv) {
+    if (argv === 'all' || !argv || process.argv.length === 6) {
       return entries
     } else {
       var obj = {}
