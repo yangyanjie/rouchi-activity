@@ -1,6 +1,7 @@
 <template>
     <div id="home">
         <div class="header">hello, home!</div>
+        <img src="./images/logo.png" alt="">
         <Hello />
     </div>
 </template>
@@ -19,7 +20,7 @@ export default {
  #home {
     width: 100%;
     height: 100%;
-    background: red;
+    // background: url('./images/logo.png') center no-repeat;
     .header {
     width: 100%;
     height: 100px;
