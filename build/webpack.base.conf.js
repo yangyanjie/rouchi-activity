@@ -12,21 +12,17 @@ var entries =  utils.getMultiEntry('./src/'+config.moduleName+'/**/*.js'); // èŽ
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  // entry: entries,
   entry: () => {
     let argv = process.argv[2]
-    // console.log(process.argv.length, 111111111111)
     let entry = entries[process.argv[2]]
     if (argv === 'all' || !argv || process.argv.length === 6) {
       return entries
     } else {
-      // return entry
       var obj = {}
       obj[argv] = entry
       console.log(obj, 'obj')
       return obj
     }
-    // if (process.agrv)
   },
   output: {
     path: config.build.assetsRoot,
@@ -58,8 +54,8 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+          limit: 1,
+          name: utils.assetsPath('static/images/[name].[hash:7].[ext]')
         }
       },
       {
@@ -67,7 +63,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('media/[name].[hash:7].[ext]')
+          name: utils.assetsPath('static/media/[name].[hash:7].[ext]')
         }
       },
       {
@@ -75,7 +71,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          name: utils.assetsPath('static/fonts/[name].[hash:7].[ext]')
         }
       }
     ]

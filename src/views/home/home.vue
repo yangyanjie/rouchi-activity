@@ -13,7 +13,6 @@ export default {
         Hello
     }
 }
-    
 </script>
 
 <style  lang="scss">
