@@ -1,7 +1,7 @@
 {
-  "name": "vue-study",
+  "name": "rouchi-activity",
   "version": "1.0.0",
-  "description": "学习vue 源码",
+  "description": "rouchi-activity",
   "author": "杨艳杰 <920526047@qq.com>",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "vue": "^2.5.2"
   },
   "devDependencies": {

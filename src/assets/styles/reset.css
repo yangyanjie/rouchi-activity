@@ -1,0 +1,116 @@
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
+html, body, div, p, ul, ol, li, h1, h2, h3, h4, h5, h6, img {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: STHeiti, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-overflow-scrolling:touch;
+}
+html, body {
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul, ol, li {
+	list-style: none;
+}
+
+em, address, i {
+	font-style: normal;
+}
+
+button, input {
+	border: 0 none;
+	outline: none;
+}
+
+input[type="submit"], input[type="button"] {
+	-webkit-user-select: none;
+	user-select: none;
+}
+input::-webkit-input-placeholder {
+    /* placeholder颜色  */
+    opacity: 1;
+    color: #C7C7CD!important;
+}
+input::-moz-placeholder {
+    /* placeholder颜色  */
+    opacity: 1;
+    color: #C7C7CD!important;
+}
+input:-moz-placeholder {
+    /* placeholder颜色  */
+    color: #C7C7CD!important;
+}
+input:-ms-input-placeholder {
+    /* placeholder颜色  */
+    opacity: 1;
+    color: #C7C7CD!important;
+}
+
+input, textarea {
+	-webkit-appearance: none;
+	-webkit-user-modify: read-write-plaintext-only;
+}
+
+a, img {
+	-webkit-touch-callout: none;
+}
+
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0; 
+}
+
+.visible {
+	display: block;
+}
+
+.invisible {
+	display: none;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.body-scroll-forbidden {
+	height: 100%;
+	overflow: hidden;
+}
+
+.body-fixed {
+	overflow: hidden;
+	position:fixed;
+	bottom:0;
+	top:0;
+	left:0;
+	right:0;
+}
+
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.border-box {
+	box-sizing: border-box;
+}
+.flex-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

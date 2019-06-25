@@ -8,9 +8,18 @@
 
 <script>
 import Hello from '@/components/HelloWorld'
+import {getCaptcha} from '@/resource/index.js'
 export default {
     components: {
         Hello
+    },
+    mounted() {
+        this.getCode()
+    },
+    methods: {
+        async getCode() {
+            let code = await getCaptcha()
+        }
     }
 }
 </script>
