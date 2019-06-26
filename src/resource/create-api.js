@@ -1,9 +1,8 @@
 import {getAxios} from './axios'
 import gConf from 'gConf'
-console.log(gConf.apiHost)
-export const api = getAxios({
-  baseURL: gConf.apiHost.replace(/\/$/, ''),
+export const apiCourse = getAxios({
+  baseURL: gConf.courseHost.replace(/\/$/, ''),
   headers: {
-    'Content-Type': 'application/x-www-form-urlencoded'
+    'Content-Type': 'application/json'
   }
 })

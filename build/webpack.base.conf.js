@@ -9,18 +9,18 @@ function resolve (dir) {
 }
 
 var entries =  utils.getMultiEntry('./src/'+config.moduleName+'/**/*.js'); // 获得入口js文件
-
+let argv = process.argv[2]
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: () => {
-    let argv = process.argv[2]
+    console.log(argv)
     let entry = entries[process.argv[2]]
     if (argv === 'all' || !argv || process.argv.length === 6) {
       return entries
     } else {
       var obj = {}
       obj[argv] = entry
-      console.log(obj, 'obj')
+      // console.log(obj, 'obj')
       return obj
     }
   },
@@ -58,7 +58,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 1,
-          name: utils.assetsPath('static/images/[name].[hash:7].[ext]')
+          name: utils.assetsPath(argv + '/images/[name].[hash:7].[ext]')
         }
       },
       {

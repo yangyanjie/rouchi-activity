@@ -1,11 +1,10 @@
 const Resource = require('./create-api')
-const {api} = Resource
+const {apiCourse} = Resource
 
-// 获取图形验证码
-export function getCaptcha (timestamp) {
-  return api.get('user/captcha', {
-    params: {
-      timestamp
-    }
-  })
+// 获取分享预习题
+export function shareExercisePrepare (params) {
+  return apiCourse.post('share/exercise/prepare', params)
+}
+export function shareExerciseReview (params) {
+  return apiCourse.post('share/exercise/review', params)
 }
