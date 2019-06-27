@@ -8,7 +8,7 @@
 
 <script>
 import Hello from '@/components/HelloWorld'
-import {getCaptcha} from '@/resource/index.js'
+// import {getCaptcha} from '@/resource/index.js'
 export default {
     components: {
         Hello
@@ -18,7 +18,7 @@ export default {
     },
     methods: {
         async getCode() {
-            let code = await getCaptcha()
+            // let code = await getCaptcha()
         }
     }
 }

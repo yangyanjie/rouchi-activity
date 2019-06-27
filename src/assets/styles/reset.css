@@ -114,3 +114,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	justify-content: space-between;
 	align-items: center;
 }
+.center {
+	margin-left: 50%;
+	transform: translateX(-50%); 
+}

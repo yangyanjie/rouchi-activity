@@ -8,7 +8,7 @@
 
 <script>
 import Hello from '@/components/HelloWorld'
-import {getCaptcha} from '@/resource/index.js'
+// import {getCaptcha} from '@/resource/index.js'
 export default {
     components: {
         Hello
@@ -18,7 +18,7 @@ export default {
     },
     methods: {
         async getCode() {
-            let code = await getCaptcha()
+            // let code = await getCaptcha()
         }
     }
 }
@@ -28,7 +28,7 @@ export default {
  #home {
     width: 100%;
     height: 100%;
-    // background: url('./images/logo.png') center no-repeat;
+    background: url('~@/views/home/images/logo.png') center no-repeat;
     .header {
     width: 100%;
     height: 100px;
