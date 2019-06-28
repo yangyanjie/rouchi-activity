@@ -28,7 +28,7 @@ export default {
  #home {
     width: 100%;
     height: 100%;
-    background: url('~@/views/home/images/logo.png') center no-repeat;
+    // background: url('~@/views/home/images/too.jpeg') center no-repeat;
     .header {
     width: 100%;
     height: 100px;

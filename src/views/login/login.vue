@@ -1,6 +1,6 @@
 <template>
     <div class="preview-share">
-        login
+        <img src="./images/loo.jpeg" alt="" srcset="">
     </div>
 </template>
 
@@ -11,6 +11,7 @@ export default {
 
 <style  lang="scss">
  .preview-share {
-    
+     height: 1000px;
+    background: url('~@/views/login/images/too.jpeg') no-repeat center;
  }
 </style>

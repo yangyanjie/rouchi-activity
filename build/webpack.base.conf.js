@@ -7,7 +7,7 @@ const vueLoaderConfig = require('./vue-loader.conf')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-
+console.log(process.env.NODE_ENV)
 var entries =  utils.getMultiEntry('./src/'+config.moduleName+'/**/*.js'); // 获得入口js文件
 let argv = process.argv[2]
 module.exports = {
@@ -58,11 +58,14 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 1,
-          name: utils.assetsPath('[path]'.split('/')[0]+'[name].[hash:7].[ext]'),
+          name: utils.assetsPath('[path][name].[hash:7].[ext]'),
           outputPath(url) {
-            var url = url.split('/')
-            console.log(url)
-            return url[2] + '/' + url[3] + '/' + url[4]
+            if( process.env.NODE_ENV === 'production') {
+              var url = url.split('/')
+              return url[2] + '/' + url[3] + '/' + url[4]
+            }else {
+              return url
+            }
           }
         }
       },
