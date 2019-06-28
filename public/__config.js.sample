@@ -14,7 +14,6 @@ const config = {
   apiHost: 'https://wechat-api-dev.rouchi.com/',
   courseHost: 'https://schedule-tst.rouchi.com/',
   teacherHost: 'https://tp-api-tst.rouchi.com/',
-  sentryDSN: 'https://735e60b1875045cd89a0e27d8687e825@st.rouchi.com/22',
   ga_tracking_id: 'UA-104925833-1',
   // 是否开启限制, true 为开启， false 为不开启限制
   attend_class_limit: true,

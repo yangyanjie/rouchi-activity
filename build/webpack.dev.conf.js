@@ -57,10 +57,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     //   template: '',
     //   inject: true
     // }),
-    // copy custom static assets
+    // copy custom public assets
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../static'),
+        from: path.resolve(__dirname, '../public'),
         to: config.dev.assetsSubDirectory,
         ignore: ['.*']
       }

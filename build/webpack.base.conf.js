@@ -58,7 +58,12 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 1,
-          name: utils.assetsPath(argv + '/images/[name].[hash:7].[ext]')
+          name: utils.assetsPath('[path]'.split('/')[0]+'[name].[hash:7].[ext]'),
+          outputPath(url) {
+            var url = url.split('/')
+            console.log(url)
+            return url[2] + '/' + url[3] + '/' + url[4]
+          }
         }
       },
       {
